@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "TIARA KASIH KEIKO SULISTYA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -119.96, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -42,
+      "left": 215,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -42,
+      "left": 138.2,
+      "attrs": { "color": "yellow" }
+    },
+    { "type": "wokwi-led", "id": "led3", "top": -42, "left": 51.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 71.15,
+      "left": 172.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 42.35,
+      "left": 134.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 32.75,
+      "left": 38.4,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led3:C", "esp:GND.2", "black", [ "v19.2", "h-76.4" ] ],
+    [ "led2:C", "esp:GND.2", "black", [ "v19.2", "h-172.4" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v19.2", "h-258.8" ] ],
+    [ "led3:A", "r3:2", "red", [ "h28.8", "v38.4" ] ],
+    [ "r3:1", "esp:23", "red", [ "v-9.6", "h-48" ] ],
+    [ "led2:A", "r2:2", "gold", [ "h38.4", "v48" ] ],
+    [ "r2:1", "esp:22", "gold", [ "v0", "h-153.6" ] ],
+    [ "led1:A", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "esp:21", "green", [ "v-9.6", "h-192" ] ]
+  ],
+  "dependencies": {}
+}
